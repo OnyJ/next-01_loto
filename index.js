@@ -4,20 +4,20 @@ const checkLoto = (firstname, lastname, email, lotoNumbers) => {
 }
 
 let checkFillingWhenSubmit = (firstname, lastname, email, lotoNumbers) => {
-  let form             = document.getElementsByTagName('form')[0]
-  let firstname_error  = document.getElementById('firstname_error')
-  let lastname_error   = document.getElementById('lastname_error')
-  let email_error      = document.getElementById('email_error')
+  let form            = document.getElementsByTagName('form')[0]
+  let firstnameError  = document.getElementById('firstnameError')
+  let lastnameError   = document.getElementById('lastnameError')
+  let emailError      = document.getElementById('emailError')
 
   form.addEventListener("submit", function (event) {
-    if (firstname === "") { firstname_error.innerHTML = "Veuillez fournir un prénom" } 
-    if (lastname === "")  { lastname_error.innerHTML = "Veuillez fournir un nom" } 
-    if (email === "")     { email_error.innerHTML = "Veuillez fournir un email" } 
+    if (firstname === "") { firstnameError.innerHTML = "Veuillez fournir un prénom" } 
+    if (lastname === "")  { lastnameError.innerHTML = "Veuillez fournir un nom" } 
+    if (email === "")     { emailError.innerHTML = "Veuillez fournir un email" } 
   })
 }
 
 let checkEmailWhenSubmit = (email) => {
-
+  // let email_rule = 
 }
 
 checkLoto(
