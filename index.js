@@ -1,13 +1,14 @@
-let form  = document.getElementsByTagName('form')[0]
-let winningNumbers = [1,2,3,4,5,6]
-let errorMessages = []
-const message = document.getElementById("message")
+let   form            = document.getElementsByTagName('form')[0]
+let   winningNumbers  = [1,2,3,4,5,6]
+let   errorMessages   = []
+const message         = document.getElementById("message")
 
 
 let validateEmail = resource => {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(resource).toLowerCase())
 }
+
 
 let validate = () => {
   let firstName = document.getElementById('first-name').value
@@ -16,7 +17,7 @@ let validate = () => {
   if(firstName == "") {
     errorMessages.push("Veuillez fournir un prénom")
     return false
-    }
+  }
   if(lastName == "") {
     errorMessages.push("Veuillez fournir un nom")
     return false
@@ -32,18 +33,20 @@ let validate = () => {
   return true
 }
 
+
 let getRandomIntInclusive = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min +1)) + min;
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min +1)) + min
 }
   
-let getArrayOfSixRandomNumbers = () => {
-  winningNumbers = [];
+let createRandomNumbers = () => {
+  winningNumbers = []
   for (var i = 0; i < 6; i++){
-    winningNumbers.push(getRandomIntInclusive(1, 49));
+    winningNumbers.push(getRandomIntInclusive(1, 49))
   }
 }
+
 
 let checkVictory = winningNums => {
   let num1 = document.getElementById('number1').value
@@ -71,10 +74,8 @@ let checkVictory = winningNums => {
   }
 }
 
-let errors = errorMsgs => {
-  errorMsgs.forEach(errorMessage => {
-    message.innerHTML = errorMessage
-  })
+let displayErrors = errorMessages => {
+  errorMessages.forEach(error => { message.innerHTML = error })
 }
 
 let checkLoto = () => {
@@ -82,13 +83,15 @@ let checkLoto = () => {
     form.addEventListener('submit', event => {
       event.preventDefault()
       message.innerHTML = ""
-      getArrayOfSixRandomNumbers()
+      createRandomNumbers()
       console.log("Jackpot is : " + winningNumbers)    
+
       if (validate() == true) {
         message.innerHTML = ""
         checkVictory(winningNumbers)  
+      } else {
+        displayErrors(errorMessages)
       }
-      errors(errorMessages)
     })
   })
 }
