@@ -1,45 +1,50 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Loto !</title>
-  </head>
-
-  <body>
-    <h1>
-      Loto<br/>
-      Tentez votre chance !
-    </h1>
-
-    <!-- <form action="#" method="post"> -->
-    <form novalidate>
+</head>
+<body>
+  <p id="message"></p>
+    <p id="message"></p>
+    <form>
+    <div>
+      <label for="first-name">Prénom</label>
+      <input id="first-name" type="text">
+    </div>
+    <div>
+      <label for="last-name">Nom</label>
+      <input id="last-name" type="text">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="text">
+    </div>
+    <p>Choisissez 6 numéros entre 1 et 49</p>
+    <div>
       <div>
-        <label for="firstname">Prénom :</label>
-        <input type="text" id="firstname" name="user_firstname">
-        <br/>
-        <span id="firstnameError" aria-live="polite"></span>
-      </div>
-      <div>
-        <label for="lastname">Nom :</label>
-        <input type="text" id="lastname" name="user_lastname">
-        <br/>
-        <span id="lastnameError" aria-live="polite"></span>
-      </div>
-      <div>
-        <label for="email">e-mail :</label>
-        <input type="email" id="email" name="email">
-        <br/>
-        <span id="emailError" aria-live="polite"></span>
+        <input id="number1" type="number" min="1" max="49">
       </div>
       <div>
-        <label for="lotoNumbers">Vos numéros :</label>
-        <input type="text" id="lotoNumbers" name="lotoNumbers">
+        <input id="number2" type="number" min="1" max="49">
       </div>
-      <div class="button">
-        <button type="submit">Valider</button>
+      <div>
+        <input id="number3" type="number" min="1" max="49">
       </div>
-    </form>
-
-    <script src="index.js"></script>
-  </body>
+      <div>
+        <input id="number4" type="number" min="1" max="49">
+      </div>
+      <div>
+        <input id="number5" type="number" min="1" max="49">
+      </div>
+      <div>
+        <input id="number6" type="number" min="1" max="49">
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <script src="index.js"></script>
+</body>
 </html>
